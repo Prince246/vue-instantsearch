@@ -15,6 +15,7 @@ import MenuSelect from './components/MenuSelect.vue';
 import Pagination from './components/Pagination.vue';
 import PoweredBy from './components/PoweredBy.vue';
 import RatingMenu from './components/RatingMenu.vue';
+import RefinementList from './components/RefinementList.vue';
 import SearchBox from './components/SearchBox.vue';
 import Snippet from './components/Snippet';
 import SortBy from './components/SortBy.vue';
@@ -37,6 +38,7 @@ const InstantSearch = {
   Pagination,
   PoweredBy,
   RatingMenu,
+  RefinementList,
   SearchBox,
   Snippet,
   SortBy,
@@ -58,6 +60,7 @@ const InstantSearch = {
     Vue.component('ais-pagination', Pagination);
     Vue.component('ais-powered-by', PoweredBy);
     Vue.component('ais-rating-menu', RatingMenu);
+    Vue.component('ais-refinement-list', RefinementList);
     Vue.component('ais-search-box', SearchBox);
     Vue.component('ais-snippet', Snippet);
     Vue.component('ais-sort-by', SortBy);
