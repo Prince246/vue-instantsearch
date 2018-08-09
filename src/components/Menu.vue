@@ -76,9 +76,7 @@ export default {
       default() {
         return args => args;
       },
-      validator(value) {
-        return isFunction(value);
-      },
+      type: Function,
     },
     sortBy: {
       default() {
