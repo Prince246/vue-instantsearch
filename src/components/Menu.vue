@@ -72,6 +72,14 @@ export default {
       type: Boolean,
       default: false,
     },
+    transformItems: {
+      default() {
+        return args => args;
+      },
+      validator(value) {
+        return isFunction(value);
+      },
+    },
     sortBy: {
       default() {
         return ['name:asc', 'count:desc'];
@@ -96,6 +104,7 @@ export default {
         limit: this.limit,
         showMoreLimit: this.showMoreLimit,
         sortBy: this.sortBy,
+        transformItems: this.transformItems,
       };
     },
     showShowMoreButton() {
