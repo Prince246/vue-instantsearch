@@ -28,11 +28,17 @@
 </template>
 
 <script>
+import { connectSortBySelector } from 'instantsearch.js/es/connectors';
+import { createPanelConsumerMixin } from '../panel';
 import algoliaComponent from '../component';
-import { connectSortBySelector } from 'instantsearch.js/es/connectors'
 
 export default {
-  mixins: [algoliaComponent],
+  mixins: [
+    algoliaComponent,
+    createPanelConsumerMixin({
+      mapStateToCanRefine: state => !state.hasNoResults,
+    }),
+  ],
   props: {
     items: {
       type: Array,
@@ -47,11 +53,11 @@ export default {
   computed: {
     widgetParams() {
       return {
-        indices: this.items
-      }
-    }
+        indices: this.items,
+      };
+    },
   },
   beforeCreate() {
-    this.connector = connectSortBySelector
+    this.connector = connectSortBySelector;
   },
 };</script>
