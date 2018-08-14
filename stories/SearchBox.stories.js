@@ -20,4 +20,13 @@ storiesOf('SearchBox', module)
         @input="refine($event.currentTarget.value)"
       >
     </ais-search-box>`,
+  }))
+  .add('with a Panel', () => ({
+    template: `
+      <ais-panel>
+        <template slot="header">SearchBox</template>
+        <ais-search-box />
+        <template slot="footer">Footer</template>
+      </ais-panel>
+    `,
   }));
