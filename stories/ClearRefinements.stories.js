@@ -34,4 +34,13 @@ storiesOf('ClearRefinements', module)
         this.clearsQuery = !this.clearsQuery;
       },
     },
+  }))
+  .add('with a Panel', () => ({
+    template: `
+      <ais-panel>
+        <template slot="header">Clear refinements</template>
+        <ais-clear-refinements :clearsQuery="true" />
+        <template slot="footer">Footer</template>
+      </ais-panel>
+    `,
   }));
